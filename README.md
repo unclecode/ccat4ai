@@ -23,33 +23,39 @@ I noticed people keep looking for tools to convert a repo into one file to attac
 
 ```bash
 # Clone the repository
-git clone https://github.com/unclecode/codecat4ai.git
+git clone https://github.com/unclecode/ccat4ai.git
 
 # Make the script executable
-chmod +x codecat4ai/ccat.sh
+chmod +x ccat4ai/ccat.sh
 
 # Add to your PATH (optional)
-sudo ln -s $(pwd)/codecat4ai/ccat.sh /usr/local/bin/ccat
+sudo ln -s $(pwd)/ccat4ai/ccat.sh /usr/local/bin/ccat
 ```
 
 ## Usage
 
 ```bash
-# If installed to PATH
+# Basic usage - output defaults to "codebase"
 ccat [repository_url_or_path] [output_name]
-
-# Or run directly
-./ccat.sh [repository_url_or_path] [output_name]
 ```
+
+The second parameter `[output_name]` is optional and defaults to `codebase` if not provided.
 
 ### Examples
 
 ```bash
-# Process a remote repository
+# Process a remote repository with custom output name
 ccat https://github.com/unclecode/crawl4ai crawl4ai
 
-# Process a local repository
-ccat ~/projects/my-project my-project
+# Process a remote repository with default output name
+# Creates codebase.md and mini.codebase.md
+ccat https://github.com/unclecode/crawl4ai
+
+# Process a local repository by name (if in current directory)
+ccat crawl4ai
+
+# Process a local repository by path
+ccat ~/projects/crawl4ai
 ```
 
 ### Output
@@ -60,11 +66,17 @@ The tool generates two files:
 
 Both files include a directory tree structure at the end.
 
+## Local vs Remote Repositories
+
+- If a URL is provided (starts with http://, https://, or git@), the tool clones the repository temporarily
+- If just a name is provided (like "crawl4ai"), the tool assumes it's a local directory in the current path
+- If a path is provided, the tool uses that local repository
+
 ## About the Author
 
 Created by [Unclecode](https://github.com/unclecode), author of the popular [Crawl4AI](https://github.com/unclecode/crawl4ai) library.
 
-If you find this tool useful, please ⭐ [CodeCat4AI](https://github.com/unclecode/codecat4ai) and [Crawl4AI](https://github.com/unclecode/crawl4ai) on GitHub!
+If you find this tool useful, please ⭐ [CodeCat4AI](https://github.com/unclecode/ccat4ai) and [Crawl4AI](https://github.com/unclecode/crawl4ai) on GitHub!
 
 ## License
 
