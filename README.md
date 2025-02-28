@@ -29,12 +29,16 @@ I noticed people keep looking for tools to convert a repo into one file to attac
 # Clone the repository
 git clone https://github.com/unclecode/ccat4ai.git
 
-# Make the script executable
-chmod +x ccat4ai/ccat.sh
-
-# Add to your PATH (optional)
-sudo ln -s $(pwd)/ccat4ai/ccat.sh /usr/local/bin/ccat
+# Run the installer
+cd ccat4ai
+chmod +x install.sh
+./install.sh
 ```
+
+The installer automatically:
+- Makes the script executable
+- Installs it to your PATH (either `/usr/local/bin` or `~/.local/bin`)
+- Adds PATH entries to your shell config if needed
 
 ## Uninstallation
 
