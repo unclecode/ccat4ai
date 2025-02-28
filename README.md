@@ -32,6 +32,18 @@ chmod +x ccat4ai/ccat.sh
 sudo ln -s $(pwd)/ccat4ai/ccat.sh /usr/local/bin/ccat
 ```
 
+## Uninstallation
+
+```bash
+# If you cloned the repository
+cd ccat4ai
+chmod +x uninstall.sh
+./uninstall.sh
+
+# Or run the uninstaller directly
+curl -s https://raw.githubusercontent.com/unclecode/ccat4ai/main/uninstall.sh | bash
+```
+
 ## Usage
 
 ```bash
