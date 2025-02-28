@@ -1,0 +1,18 @@
+# Output files
+*.md
+!README.md
+!CLAUDE.md
+
+# Temporary directories
+*/
+!.github/
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
