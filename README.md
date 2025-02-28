@@ -6,6 +6,10 @@
 
 A lightning-fast tool to concatenate entire repositories into markdown files for AI processing.
 
+> **🌟 SPECIAL ANNOUNCEMENT 🌟**  
+> **If this repository reaches 1000 stars in 7 days, I will make CodeCat4AI available as a free online service accessible via a single link!**  
+> *Show your support by starring this repo if you find it useful!*
+
 ## Why CodeCat4AI?
 
 I noticed people keep looking for tools to convert a repo into one file to attach to their favorite LLM. Finding no simple solution, I created this 5-line bash script to do the job efficiently!
