@@ -30,10 +30,10 @@ I noticed people keep looking for tools to convert a repo into one file to attac
 ```bash
 # Install from Homebrew
 brew tap unclecode/ccat
-brew install codecat
+brew install catcode
 ```
 
-This will install the tool as `codecat` and create symlinks so you can also use it as `ccat4ai` or simply `ccat`.
+This will install the tool as `catcode`.
 
 ### Manual Installation
 
