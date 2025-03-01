@@ -29,7 +29,7 @@ I noticed people keep looking for tools to convert a repo into one file to attac
 
 ```bash
 # Install from Homebrew
-brew tap unclecode/ccat
+brew tap unclecode/ccode
 brew install catcode
 ```
 
