@@ -1,4 +1,4 @@
-# CodeCat4AI (ccat)
+# CCode4AI
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Bash](https://img.shields.io/badge/Shell-Bash-blue.svg)](https://www.gnu.org/software/bash/)
@@ -7,10 +7,10 @@
 A lightning-fast tool to concatenate entire repositories into markdown files for AI processing.
 
 > **🌟 SPECIAL ANNOUNCEMENT 🌟**  
-> **If this repository reaches 1000 stars in 7 days, I will make CodeCat4AI available as a free online service accessible via a single link!**  
+> **If this repository reaches 1000 stars in 7 days, I will make CCode4AI available as a free online service accessible via a single link!**  
 > *Show your support by starring this repo if you find it useful!*
 
-## Why CodeCat4AI?
+## Why CCode4AI?
 
 I noticed people keep looking for tools to convert a repo into one file to attach to their favorite LLM. Finding no simple solution, I created this 5-line bash script to do the job efficiently!
 
@@ -39,10 +39,10 @@ This will install the tool as `catcode` with a shorter `ccode` alias.
 
 ```bash
 # Clone the repository
-git clone https://github.com/unclecode/ccat4ai.git
+git clone https://github.com/unclecode/ccode4ai.git
 
 # Run the installer
-cd ccat4ai
+cd ccode4ai
 chmod +x install.sh
 ./install.sh
 ```
@@ -56,12 +56,12 @@ The installer automatically:
 
 ```bash
 # If you cloned the repository
-cd ccat4ai
+cd ccode4ai
 chmod +x uninstall.sh
 ./uninstall.sh
 
 # Or run the uninstaller directly
-curl -s https://raw.githubusercontent.com/unclecode/ccat4ai/main/uninstall.sh | bash
+curl -s https://raw.githubusercontent.com/unclecode/ccode4ai/main/uninstall.sh | bash
 ```
 
 ## Usage
@@ -77,17 +77,25 @@ The second parameter `[output_name]` is optional and defaults to `codebase` if n
 
 ```bash
 # Process a remote repository with custom output name
-ccat https://github.com/unclecode/crawl4ai crawl4ai
+catcode https://github.com/unclecode/crawl4ai crawl4ai
+# or use the shorter alias:
+ccode https://github.com/unclecode/crawl4ai crawl4ai
 
 # Process a remote repository with default output name
 # Creates codebase.md and mini.codebase.md
-ccat https://github.com/unclecode/crawl4ai
+catcode https://github.com/unclecode/crawl4ai
+# or use the shorter alias:
+ccode https://github.com/unclecode/crawl4ai
 
 # Process a local repository by name (if in current directory)
-ccat crawl4ai
+catcode crawl4ai
+# or:
+ccode crawl4ai
 
 # Process a local repository by path
-ccat ~/projects/crawl4ai
+catcode ~/projects/crawl4ai
+# or:
+ccode ~/projects/crawl4ai
 ```
 
 ### Output
@@ -108,7 +116,7 @@ Both files include a directory tree structure at the end.
 
 Created by [Unclecode](https://github.com/unclecode), author of the popular [Crawl4AI](https://github.com/unclecode/crawl4ai) library.
 
-If you find this tool useful, please ⭐ [CodeCat4AI](https://github.com/unclecode/ccat4ai) and [Crawl4AI](https://github.com/unclecode/crawl4ai) on GitHub!
+If you find this tool useful, please ⭐ [CCode4AI](https://github.com/unclecode/ccode4ai) and [Crawl4AI](https://github.com/unclecode/crawl4ai) on GitHub!
 
 ## License
 
