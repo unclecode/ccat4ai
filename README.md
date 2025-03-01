@@ -25,6 +25,18 @@ I noticed people keep looking for tools to convert a repo into one file to attac
 
 ## Installation
 
+### Using Homebrew (macOS)
+
+```bash
+# Install from Homebrew
+brew tap unclecode/ccat
+brew install codecat
+```
+
+This will install the tool as `codecat` and create a symlink so you can also use it as `ccat4ai`.
+
+### Manual Installation
+
 ```bash
 # Clone the repository
 git clone https://github.com/unclecode/ccat4ai.git
