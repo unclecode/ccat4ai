@@ -33,7 +33,7 @@ brew tap unclecode/ccat
 brew install catcode
 ```
 
-This will install the tool as `catcode`.
+This will install the tool as `catcode` with a shorter `ccode` alias.
 
 ### Manual Installation
 
