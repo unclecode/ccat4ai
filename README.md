@@ -33,7 +33,7 @@ brew tap unclecode/ccat
 brew install codecat
 ```
 
-This will install the tool as `codecat` and create a symlink so you can also use it as `ccat4ai`.
+This will install the tool as `codecat` and create symlinks so you can also use it as `ccat4ai` or simply `ccat`.
 
 ### Manual Installation
 
