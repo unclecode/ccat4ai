@@ -1,31 +1,33 @@
 #!/bin/bash
 
 echo "Installing CodeCat4AI..."
+echo ""
+echo "RECOMMENDED: Install via Homebrew (https://brew.sh):"
+echo "  brew tap unclecode/ccat4ai"
+echo "  brew install ccat4ai"
+echo ""
+echo "Installing manually..."
 
 # Make sure the script is executable
 chmod +x ccat.sh
 
-# Try to install to /usr/local/bin if possible, otherwise to ~/.local/bin
-if [ -d "/usr/local/bin" ] && [ -w "/usr/local/bin" ]; then
-    INSTALL_DIR="/usr/local/bin"
-elif [ -d "$HOME/.local/bin" ]; then
-    INSTALL_DIR="$HOME/.local/bin"
-else
-    # Create ~/.local/bin if it doesn't exist
-    mkdir -p "$HOME/.local/bin"
-    INSTALL_DIR="$HOME/.local/bin"
-    
-    # Add to PATH if not already there
-    if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
-        echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.bashrc"
-        echo 'export PATH="$HOME/.local/bin:$PATH"' >> "$HOME/.zshrc" 2>/dev/null || true
-        echo "Added $HOME/.local/bin to PATH in .bashrc and .zshrc"
-        echo "Please restart your shell or run 'source ~/.bashrc' to update your PATH"
-    fi
+# Create ~/bin if it doesn't exist
+mkdir -p "$HOME/bin"
+INSTALL_DIR="$HOME/bin"
+
+# Add to PATH if not already there
+if [[ ":$PATH:" != *":$HOME/bin:"* ]]; then
+    echo 'export PATH="$HOME/bin:$PATH"' >> "$HOME/.bashrc"
+    echo 'export PATH="$HOME/bin:$PATH"' >> "$HOME/.zshrc" 2>/dev/null || true
+    echo "Added $HOME/bin to PATH in .bashrc and .zshrc"
+    echo "Please restart your shell or run 'source ~/.bashrc' (or ~/.zshrc) to update your PATH"
 fi
 
-# Copy the script to the install directory
-cp ccat.sh "$INSTALL_DIR/ccat"
+# Create the symlink
+ln -sf "$(pwd)/ccat.sh" "$INSTALL_DIR/ccat4ai"
 
-echo "CodeCat4AI installed successfully to $INSTALL_DIR/ccat!"
-echo "You can now run 'ccat [repository_url_or_path] [output_name]' from anywhere."
+echo "CodeCat4AI installed successfully to $INSTALL_DIR/ccat4ai!"
+echo "You can now run 'ccat4ai [repository_url_or_path] [output_name]' from anywhere."
+echo ""
+echo "Want to create a shorter 'ccat' alias? Run:"
+echo "  ln -sf $INSTALL_DIR/ccat4ai $INSTALL_DIR/ccat"
