@@ -33,7 +33,21 @@ brew tap unclecode/ccat4ai
 brew install ccat4ai
 ```
 
-This will install the tool as `ccat4ai`. After installation, you'll see instructions on how to create a symlink to use `ccat` as a shorter command if you prefer.
+This will install the tool as `ccat4ai`. After installation, you'll see instructions on how to create a symlink to use `ccat` as a shorter command if you prefer:
+
+```bash
+# Create ~/bin directory if it doesn't exist
+mkdir -p ~/bin
+
+# Create the symlink
+ln -sf $(which ccat4ai) ~/bin/ccat
+
+# Add ~/bin to your PATH (if not already done)
+echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc  # or ~/.bashrc
+
+# Apply changes to current terminal
+source ~/.zshrc  # or ~/.bashrc
+```
 
 ### Manual Installation
 
