@@ -33,7 +33,51 @@ brew tap unclecode/ccat4ai
 brew install ccat4ai
 ```
 
-This will install the tool as `ccat4ai`. After installation, you'll see instructions on how to create a symlink to use `ccat` as a shorter command if you prefer:
+This will install the tool as `ccat4ai`.
+
+## Usage
+
+```bash
+# Basic usage - output defaults to "codebase"
+ccat4ai [repository_url_or_path] [output_name]
+```
+
+The second parameter `[output_name]` is optional and defaults to `codebase` if not provided.
+
+### Local vs Remote Repositories
+
+- If a URL is provided (starts with http://, https://, or git@), the tool clones the repository temporarily
+- If just a name is provided (like "crawl4ai"), the tool assumes it's a local directory in the current path
+- If a path is provided, the tool uses that local repository
+
+### Examples
+
+```bash
+# Process a remote repository with custom output name
+ccat4ai https://github.com/unclecode/crawl4ai crawl4ai
+
+# Process a remote repository with default output name
+# Creates codebase.md and mini.codebase.md
+ccat4ai https://github.com/unclecode/crawl4ai
+
+# Process a local repository by name (if in current directory)
+ccat4ai crawl4ai
+
+# Process a local repository by path
+ccat4ai ~/projects/crawl4ai
+```
+
+### Output
+
+The tool generates two files:
+- `[output_name].md` - Full version with all text files concatenated
+- `mini.[output_name].md` - Compact version with only function/class definitions
+
+Both files include a directory tree structure at the end.
+
+### Using a Shorter Command Name
+
+After installation, you can create a shorter `ccat` command if preferred:
 
 ```bash
 # Create ~/bin directory if it doesn't exist
@@ -49,7 +93,12 @@ echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc  # or ~/.bashrc
 source ~/.zshrc  # or ~/.bashrc
 ```
 
-### Manual Installation
+Then you can use the shorter command:
+```bash
+ccat https://github.com/unclecode/crawl4ai output-name
+```
+
+## Manual Installation
 
 You can also download and use the script directly without Homebrew:
 
@@ -84,14 +133,6 @@ rm -f ~/bin/ccat  # If you created the shorter alias
 curl -s https://raw.githubusercontent.com/unclecode/ccat4ai/main/cleanup-ccat4ai.sh | bash
 ```
 
-## Usage
-
-```bash
-# Basic usage - output defaults to "codebase"
-ccat [repository_url_or_path] [output_name]
-```
-
-The second parameter `[output_name]` is optional and defaults to `codebase` if not provided.
 
 ### Examples
 
@@ -120,12 +161,6 @@ The tool generates two files:
 - `mini.[output_name].md` - Compact version with only function/class definitions
 
 Both files include a directory tree structure at the end.
-
-## Local vs Remote Repositories
-
-- If a URL is provided (starts with http://, https://, or git@), the tool clones the repository temporarily
-- If just a name is provided (like "crawl4ai"), the tool assumes it's a local directory in the current path
-- If a path is provided, the tool uses that local repository
 
 ## About the Author
 
