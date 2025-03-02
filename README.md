@@ -51,31 +51,37 @@ source ~/.zshrc  # or ~/.bashrc
 
 ### Manual Installation
 
+You can also download and use the script directly without Homebrew:
+
 ```bash
 # Clone the repository
 git clone https://github.com/unclecode/ccat4ai.git
 
-# Run the installer
+# Option 1: Run directly from the cloned directory
 cd ccat4ai
-chmod +x install.sh
-./install.sh
-```
+chmod +x ccat.sh
+./ccat.sh https://github.com/user/repo output-name
 
-The installer automatically:
-- Makes the script executable
-- Installs it to your PATH (either `/usr/local/bin` or `~/.local/bin`)
-- Adds PATH entries to your shell config if needed
+# Option 2: Create a symlink in your bin directory
+mkdir -p ~/bin
+ln -sf "$(pwd)/ccat.sh" ~/bin/ccat4ai
+echo 'export PATH="$HOME/bin:$PATH"' >> ~/.zshrc  # or ~/.bashrc
+source ~/.zshrc  # or ~/.bashrc
+```
 
 ## Uninstallation
 
 ```bash
-# If you cloned the repository
-cd ccat4ai
-chmod +x uninstall.sh
-./uninstall.sh
+# If installed with Homebrew
+brew uninstall ccat4ai
+brew untap unclecode/ccat4ai
 
-# Or run the uninstaller directly
-curl -s https://raw.githubusercontent.com/unclecode/ccat4ai/main/uninstall.sh | bash
+# If you created a symlink
+rm -f ~/bin/ccat4ai
+rm -f ~/bin/ccat  # If you created the shorter alias
+
+# For a complete cleanup, use our cleanup script:
+curl -s https://raw.githubusercontent.com/unclecode/ccat4ai/main/cleanup-ccat4ai.sh | bash
 ```
 
 ## Usage
